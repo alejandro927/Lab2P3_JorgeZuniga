@@ -16,42 +16,39 @@ int menu() {
 }
 
 void RecursivaPascal(int max, int n, int res_anterior [], int salida []){
-	/*if( n == max ){
-		return 0;
+	if( n == max ){
+		
 	}else{
-		for(int i=0 ; i < max ; i++){
-			if( (i==1) || (i== n)){
-				salida[i] = res_anterior[i];
+		for(int i=0 ; i < n ; i++){
+			if( (i == 0) || (i == n-1)){
+				salida[i] = 1;
 			}else{
-				salida[i] = res_anterior[i] + res_anterior[i+1]
+				salida[i] = res_anterior[i-1] + res_anterior[i];
 			}
 		}
-		for(int i=0;i<max;i++){
-			res_anterior[i] = salida[i];
-			cout<<salida[i];	
-		}
-		n++;
 		
-		RecursivaPascal(max,n,res_anterior,salida)
-	}*/
+		for(int i=0;i < n;i++){
+			res_anterior[i] = salida[i];
+			cout<<salida[i]<<" ";	
+			salida[i]=0;
+		}
+		cout<<endl;
+		RecursivaPascal(max,n+1,res_anterior,salida);
+	}
 }
 
 void Ejercicio1() {
 	int max_n=0;
 	cout<<"Ingrese el valor max_n : ";
 	cin>>max_n;
-	while(max_n<=0||max_n>=100){
+	while((max_n<=0)||(max_n>=100)){
 		cout<<"El valor no es permitido inngrese otro:";
 		cin>>max_n;
 	}
-	int n=0;
+	int n=1;
 	int res_anterior [100];
 	int salida [100];
-	for(int i = 0; i < 100 ; i++){
-		res_anterior[i]=0;
-		salida[i] = 0;
-	}
-	RecursivaPascal(max_n,n,res_anterior,salida);
+	RecursivaPascal(max_n+2,n,res_anterior,salida);
 }
 
 
