@@ -126,6 +126,7 @@ double Sumatoria(double promedio,int x[]){
 	return resultado;
 }
 
+//funcion del ejercicio2
 void Ejercicio2() {
 	int arreglo[20];
 	double prom;
@@ -135,8 +136,10 @@ void Ejercicio2() {
 	cout<<"El arreglo es:"<<endl;
 	ImprimirArrEjercicio2(arreglo);
 	cout<<endl;
+	//Llama al promedio y se lo asigno
 	prom = Promedio(arreglo);
 	//cout<<"Promedio:"<<prom<<endl;
+	//Llamo a la sumatoria y se la asigno
 	suma = Sumatoria(prom,arreglo);
 	//cout<<"La suma es:"<<suma<<endl;
 	desviacion = sqrt(suma/20);
@@ -144,15 +147,19 @@ void Ejercicio2() {
 	
 }
 
+//Funcion para imprimir los caracteres de ascii
 void Primero(int x[], int y[]){
-	char val = 177;
-	char val2= 178;
+	char val = 177;//primer caracter
+	char val2= 178;//segundo caracter
+	
 	for(int i=0 ; i < 10 ; i++){
 		cout<<i<<". "<<endl;
+		//imprime el primer caracter el numero de veces que vale el numero del primer arreglo
 		for(int j=0; j < x[i]; j++){
 			cout<<val<<" ";
 		}
 		cout<<endl<<endl;
+		//imprime el segundo caracter el numero de veces que vale el numero del segundo arreglo
 		for(int j=0; j < y[i]; j++){
 			cout<<val2<<" ";
 		}
@@ -160,6 +167,7 @@ void Primero(int x[], int y[]){
 	}
 }
 
+//funcion del tercer ejercicio
 void Ejercicio3() {
 	int arreglo1[10];
 	int arreglo2[10];
@@ -169,10 +177,11 @@ void Ejercicio3() {
 	LlenarArr(arreglo2);
 	ImprimirArr(arreglo2);
 	cout<<endl;
+	//llama la funcion para hacer las impresiones
 	Primero(arreglo1,arreglo2);
 }
 
-
+//main
 int main(int argc, char** argv) {
 	srand(time(NULL));
 	int opcion=0;
