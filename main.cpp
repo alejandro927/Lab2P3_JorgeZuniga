@@ -101,12 +101,12 @@ double Sumatoria(double promedio,int x[]){
 			resta = x[i] - promedio;
 			ecuacion = pow(resta,2);
 			resultado = resultado + ecuacion;
-			//cout<<" ( "<<i<<") "<<resultado<<" ,";
+			cout<<" ( "<<i<<") "<<resultado<<" ,";
 		}else{
 			resta = (double)promedio - x[i] ;
 			ecuacion = pow(resta,2);
 			resultado = resultado + ecuacion;
-			//cout<<" ( "<<i<<") "<<resultado<<" ,";
+			cout<<" ( "<<i<<") "<<resultado<<" ,";
 		}	
 	}
 	cout<<endl;
@@ -119,12 +119,12 @@ void Ejercicio2() {
 	double suma=0;
 	double desviacion=0;
 	LlenarArrEjercicio2(arreglo);
-	//ImprimirArrEjercicio2(arreglo);
+	ImprimirArrEjercicio2(arreglo);
 	cout<<endl;
 	prom = promedio(arreglo);
-	//cout<<"Promedio:"<<prom<<endl;
+	cout<<"Promedio:"<<prom<<endl;
 	suma = Sumatoria(prom,arreglo);
-	//cout<<"La suma es:"<<suma<<endl;
+	cout<<"La suma es:"<<suma<<endl;
 	desviacion = sqrt(suma/20);
 	cout<<"La desviacion es de:"<< desviacion<<endl;
 	
